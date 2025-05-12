@@ -1,7 +1,12 @@
 ---
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
+import CustomCounter from "./CustomCounter.astro";
 import Hero from "./Hero.astro";
+
+import ReactCounter from "./react/Counter";
+import SolidCounter from "./solid/Counter";
+import SvelteCounter from "./svelte/Counter.svelte";
 ---
 
 <div class="min-h-screen">
@@ -13,6 +18,11 @@ import Hero from "./Hero.astro";
   />
 
   <Hero />
+
+  <CustomCounter />
+  <ReactCounter client:only="react" />
+  <SolidCounter client:only="solid" />
+  <SvelteCounter client:only="svelte" />
 
   <main
     class="container mx-auto flex justify-center items-center min-h-screen p-4"
